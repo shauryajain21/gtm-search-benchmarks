@@ -188,6 +188,33 @@ All four engines are scored on identical rows (the companies where Linkup return
 
 ---
 
+## Cost per request
+
+Every API here is priced **per request** (the search endpoints carry no token bill).
+Full pricing below — **greener = cheaper** in the matrix.
+
+| Benchmark | **Linkup** | Exa | Parallel | Perplexity |
+| ---------------------- | ---------- | ------ | -------- | ---------- |
+| Enrichment             | **$0.006** | $0.007 | $0.005   | $0.008     |
+| Richness *(20 results)* | **$0.005** | $0.017 | $0.015   | $0.005     |
+| Freshness              | **$0.006** | $0.007 | $0.005   | $0.008     |
+| Company research       | **$0.005** | $0.007 | $0.005   | $0.005     |
+| Funding                | **$0.006** | $0.007 | $0.005   | $0.008     |
+
+![Cost per request, by benchmark and engine](assets/pricing.png)
+
+- **Linkup is flat — never above $0.006/request**, sourced ($0.005) or structured ($0.006), no matter how many results come back.
+- **Linkup never charges per source.** Exa and Parallel bill **per result above 10**, so they get more expensive the more a query returns.
+- **The gap is widest when results scale:** on the 20-result richness task, Linkup is **$0.005 vs Exa $0.017 and Parallel $0.015 — 3×+ cheaper**.
+- **More budget doesn't close the quality gap.** Even maxed out at `numResults=100` (~**$0.097/request, ~16× Linkup**), Exa's enrichment was **56% correct vs Linkup's 94%** at $0.006 — and freshness **14% vs 74%**. Linkup wins on quality *and* cost. *(The matrix normalizes Exa to 10 results for a fair per-request comparison; this is the engine's own 100-result run.)*
+
+> List prices, June 2026, per request. Exa enrichment/freshness normalized to 10 results
+> for an apples-to-apples comparison (source runs used 100); richness keeps 20 results,
+> which every engine used. Parallel funding assumes the `lite-fast` processor; Perplexity's
+> structured extract is a base-Sonar request fee plus a sub-penny token cost.
+
+---
+
 ## Methodology
 
 The benches differ in task, but share the same design principles — built to be
