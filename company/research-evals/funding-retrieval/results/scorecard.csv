@@ -1,0 +1,5 @@
+api,within_10,within_25,within_50,median_err,coverage,n
+linkup,67,82,90,2,100,93
+parallel,57,74,81,6,100,93
+exa,52,71,85,10,100,93
+perplexity,45,60,74,15,94,93

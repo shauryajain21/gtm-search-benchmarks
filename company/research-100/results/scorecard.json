@@ -1,0 +1,37 @@
+{
+  "companies": 100,
+  "engines": {
+    "linkup": {
+      "relevance_composite": 78.8,
+      "on_target_pct": 80.7,
+      "answers_pct": 76.8,
+      "right_company_pct": 83,
+      "information_repeated_pct": 5,
+      "worst_case_p10": 57.7
+    },
+    "exa": {
+      "relevance_composite": 74.9,
+      "on_target_pct": 76.8,
+      "answers_pct": 73.0,
+      "right_company_pct": 80,
+      "information_repeated_pct": 10,
+      "worst_case_p10": 56.0
+    },
+    "perplexity": {
+      "relevance_composite": 71.0,
+      "on_target_pct": 73.4,
+      "answers_pct": 68.5,
+      "right_company_pct": 76,
+      "information_repeated_pct": 3,
+      "worst_case_p10": 53.7
+    },
+    "parallel": {
+      "relevance_composite": 68.5,
+      "on_target_pct": 71.0,
+      "answers_pct": 66.1,
+      "right_company_pct": 73,
+      "information_repeated_pct": 12,
+      "worst_case_p10": 39.7
+    }
+  }
+}
